@@ -1,0 +1,10 @@
+<h1>Events created by <%=@user.name%></h1>
+
+<div id="events">
+  <% @user.events.each do |event| %>
+    <%= render “/events/event” %>
+    <p>
+      <%#= link_to "Show this event", event %>
+    </p>
+  <% end %>
+</div>

@@ -1,24 +1,7 @@
-# README
+# Private-events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails project for  (this TheOdinProject lesson.)[https://www.theodinproject.com/lessons/ruby-on-rails-private-events]
 
-Things you may want to cover:
+## Lesson details
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A user can create events. A user can attend many events. An event can be attended by many users. Events take place at a specific date and at a location.

@@ -2,8 +2,20 @@
 <p class="alert"><%= alert %></p>
 <h1>Events</h1>
 
-<div id="events">
-  <% @events.each do |event| %>
+<div id="past_events">
+  <h2>Past events:</h2>
+  <% @events.past.each do |event| %>
+    <%= render event %>
+    <p>
+      <%= link_to 'Details', event_path(event) %>
+    </p>
+    <hr>
+  <% end %>
+</div>
+<br>
+<div id="future_events">
+  <h2>Future events:</h2>
+  <% @events.future.each do |event| %>
     <%= render event %>
     <p>
       <%= link_to 'Details', event_path(event) %>

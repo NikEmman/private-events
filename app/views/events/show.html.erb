@@ -1,5 +1,4 @@
 <h2>Event details</h2>
-<p style="color: green"><%= notice %></p>
 <% @attendee_event ||= @event.attendee_events.build %>
 
 <%= render @event %>
@@ -11,11 +10,11 @@
           <li><%= attendee.name %></li>
         <% end %>
       </ul>
-<%= form_with model: [@event, @attendee_event], local: true do |form| %>
     <%if AttendeeEvent.exists?(attendee_id: current_user.id, event_id: @event.id)%>
-    # to_do remove attendance button
+      <%= button_to 'Remove attendance', event_attendee_event_path(event_id: @event.id, attendee_id: current_user.id), method: :delete %>
     <%else%>
-    <p><%= form.submit "I will be there!" %></p>
+      <%= form_with model: [@event, @attendee_event], local: true do |form| %>
+      <p><%= form.submit "I will be there!" %></p>
     <%end%>
   
   <%end%>

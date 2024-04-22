@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :events
 
   resources :events, only: :show do
-    resources :attendee_events, only: :create
+    resources :attendee_events, only: [:create, :destroy]
   end
 
 

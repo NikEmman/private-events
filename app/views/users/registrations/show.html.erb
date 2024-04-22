@@ -1,10 +1,33 @@
-<h1>Events created by <%=@user.name%></h1>
+<h1><%=@user.name%>'s pofile</h1>
+<h3>Events created: </h3>
+<div id="created">
+  <ul>
+    <% @user.events.each do |event| %>
+    
+        <li><%= link_to "#{event.location}", event %></li>
+    
+    <% end %>
+  </ul>
+</div>
+<b></b>
+<h3>Events attended: </h3>
+<div id="attended">
+  <ul>
+    <% @user.attended_events.where("time <= ?", Time.now).each do |event| %>
+    
+        <li><%= link_to "#{event.location}", event %></li>
+    
+    <% end %>
+  </ul>
+</div>
 
-<div id="events">
-  <% @user.events.each do |event| %>
-    <%= render “/events/event” %>
-    <p>
-      <%#= link_to "Show this event", event %>
-    </p>
-  <% end %>
+<h3>Future events to attend: </h3>
+<div id="attended">
+  <ul>
+    <% @user.attended_events.where("time >= ?", Time.now).each do |event| %>
+    
+        <li><%= link_to "#{event.location}", event %></li>
+    
+    <% end %>
+  </ul>
 </div>

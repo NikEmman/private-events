@@ -1,2 +1,4 @@
-<h4>Party at : <%= event.location%></h4>
-<p>Party starts at: <%=event.time%></p>
+<h4><%=event.creator.name%>'s event at : <%= event.location%></h4>
+<p>Event starts at: <%=event.time%></p>
+<h4>Event details: </h4>
+<p><%=event.description%></p>

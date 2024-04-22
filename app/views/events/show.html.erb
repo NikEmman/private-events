@@ -2,6 +2,10 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @event %>
+<% @attendee_event ||= @event.attendee_events.build %>
+<%= form_with model: [@event, @attendee_event], local: true do |form| %>
+  <p><%= form.submit "I will be there!" %></p>
+  <%end%>
 
 <div>
   <%# link_to "Edit this post", edit_post_path(@post) %> 

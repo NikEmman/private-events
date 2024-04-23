@@ -39,6 +39,10 @@ header a {
     font-size: x-large;
 }
 
+h1 {
+    text-align: center;
+}
+
 .notice {
     background-color: rgb(120, 215, 141);
     color: green;
@@ -96,12 +100,15 @@ header a {
     border-radius: 15px;
     height: 2rem;
     padding: 8px;
+    width: 12vw;
 
 }
 
 .button {
     background-color: var(--button);
     color: var(--sidebar-text);
+    text-decoration: none;
+
 
     &:hover {
         background-color: var(--main);

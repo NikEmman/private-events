@@ -6,7 +6,7 @@
   
   
       <div class="card">
-        <h3>List of names attending</p>
+        <h4>List of people attending</h4>
          <ul>
             <% @event.attendees.each do |attendee| %>
               <li><%= attendee.name %></li>
@@ -14,6 +14,7 @@
           </ul>
       </div>
 </div>
+<div class="links">
     <%if AttendeeEvent.exists?(attendee_id: current_user.id, event_id: @event.id)%>
       <%= button_to 'Remove attendance', event_attendee_event_path(event_id: @event.id, attendee_id: current_user.id),class:"button", method: :delete %>
     <%else%>
@@ -23,8 +24,8 @@
   
     <%end%>
 
-<div>
+
   <%= link_to "Edit", edit_event_path(@event), class:"button" %> 
-  <%= button_to "Delete event", @event, class:"delete", method: :delete, form: { data: {confirm: 'Are you sure?' }}%>
+  <%= button_to "Delete event", @event, class:"delete", method: :delete%>
   <%= link_to "Back", root_path, class:"button"%>
 </div>

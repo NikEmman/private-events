@@ -100,8 +100,9 @@ h1 {
     border-radius: 15px;
     height: 2rem;
     padding: 8px;
-    width: 12vw;
-
+    width: 10vw;
+    font-size: var(--font-small);
+    border: none;
 }
 
 .button {
@@ -111,7 +112,7 @@ h1 {
 
 
     &:hover {
-        background-color: var(--main);
+        background-color: var(--sidebar-text);
         color: var(--button);
     }
 
@@ -132,4 +133,19 @@ h1 {
     &:active {
         transform: translate(0.8rem, 0.3rem);
     }
+}
+
+.btn-small {
+    width: 6vw;
+
+    &:hover {
+        background-color: var(--border);
+        color: var(--button);
+    }
+}
+
+.links {
+    display: flex;
+    padding: var(--font-large);
+    gap: var(--font-medium);
 }

@@ -13,6 +13,11 @@
     --small-gap: 0.6rem;
 }
 
+body {
+    background-color: var(--main);
+
+}
+
 header>ul {
     list-style-type: none;
     display: flex;
@@ -24,7 +29,7 @@ header>ul {
 }
 
 header {
-    background-color: rgb(9, 131, 184);
+    background-color: var(--sidebar-color);
     display: flex;
 }
 
@@ -47,7 +52,8 @@ header a {
 }
 
 .container {
-    background-color: var(--main);
+    padding-left: var(--font-large);
+    padding-right: var(--font-large);
 }
 
 .cards-container {
@@ -60,7 +66,8 @@ header a {
 
 .cards {
     display: grid;
-    grid-template: repeat(3, max-content)/ repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template: repeat(3, max-content)/ repeat(3, 1fr); */
     gap: var(--font-large);
 
 }
@@ -81,17 +88,38 @@ header a {
     gap: var(--font-small);
 }
 
-button {
-    background-color: var(--button);
+.button,
+.delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 15px;
     height: 2rem;
+    padding: 8px;
+
+}
+
+.button {
+    background-color: var(--button);
     color: var(--sidebar-text);
-    padding: var(--font-small);
-    text-align: center;
 
     &:hover {
         background-color: var(--main);
         color: var(--button);
+    }
+
+    &:active {
+        transform: translate(0.8rem, 0.3rem);
+    }
+}
+
+.delete {
+    background-color: rgb(204, 104, 104);
+    color: var(--sidebar-text);
+
+    &:hover {
+        background-color: var(--sidebar-text);
+        color: rgb(204, 104, 104);
     }
 
     &:active {

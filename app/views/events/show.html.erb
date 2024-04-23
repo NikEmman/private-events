@@ -14,13 +14,13 @@
       <%= button_to 'Remove attendance', event_attendee_event_path(event_id: @event.id, attendee_id: current_user.id), method: :delete %>
     <%else%>
       <%= form_with model: [@event, @attendee_event], local: true do |form| %>
-      <%= form.submit "I will be there!" %>
+      <%= form.submit "I will be there!", class: "button" %>
     <%end%>
   
   <%end%>
 
 <div>
   <%= link_to "Edit", edit_event_path(@event) %> 
-  <%= button_to "Delete event", @event, method: :delete, form: { data: {confirm: 'Are you sure?' }}%>
+  <%= button_to "Delete event", @event, class:"delete", method: :delete, form: { data: {confirm: 'Are you sure?' }}%>
   <%= link_to "Back", root_path %>
 </div>

@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :require_permission, only: :edit
+  before_action :require_permission, only: [:edit, :destroy]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   
 
@@ -63,7 +63,7 @@ class EventsController < ApplicationController
 
   def require_permission
     if current_user != Event.find(params[:id]).creator
-      redirect_to root_path, notice: "You are not the creator of this event"
+      redirect_to root_path, alert: "You are not the creator of this event"
     end
   end
   

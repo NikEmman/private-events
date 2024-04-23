@@ -40,6 +40,12 @@ header a {
     text-align: center;
 }
 
+.alert {
+    background-color: rgb(221, 132, 140);
+    color: rgb(110, 10, 18);
+    text-align: center;
+}
+
 .container {
     background-color: var(--main);
 }

@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   # post "events", to: 'events#create'
   # get "events", to: "events#index"
   # get '/events/:id', to: 'events#show', as: 'event'
-  resources :events
+  # resources :events
 
-  resources :events, only: :show do
+  resources :events do
     resources :attendee_events, only: [:create, :destroy]
   end
 

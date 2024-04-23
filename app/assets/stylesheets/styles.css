@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+}
+
+header>ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding-left: 40px;
+    padding-right: 40px;
+
+}
+
+header {
+    background-color: rgb(9, 131, 184);
+    display: flex;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+}
+
+.notice {
+    background-color: rgb(120, 215, 141);
+    color: green;
+    text-align: center;
+}

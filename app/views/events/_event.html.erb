@@ -1,7 +1,14 @@
-<h4><%=event.creator.name%>'s event at : <%= event.location%></h4>
-<p>Event starts at: <%=event.time.in_time_zone(Time.zone).strftime("%d %B, %Y %H:%M")%></p>
-<h4>Event description: </h4>
-<p><%=event.description%></p>
-<p>People attending this event: <%= event.attendees.count%></p>
+<div class="cards">
+    <div class="card">
+        <h4><%=event.creator.name%>'s event at : <%= event.location%></h4>
+        <p><%=event.description%></p>
+        <div class="special-actions">
+            <p>Scheduled at: <%=event.time.in_time_zone(Time.zone).strftime("%d %B, %Y %H:%M")%></p>
+            <p><%= event.attendees.count%> attending</p>
+            <% if controller_name == 'events' && action_name == 'index' %>
+              <%= render partial: 'links', locals: { event: event } %>
+            <% end %>
 
-
+        </div>
+    </div>
+</div>

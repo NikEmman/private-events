@@ -20,7 +20,7 @@
   <%end%>
 
 <div>
-  <%= button_to "Edit this post", edit_event_path(@event) %> 
-  <%= button_to "Destroy this event", @event, method: :delete, form: { data: {confirm: 'Are you sure?' }}%>
-  <%= button_to "Back to events", events_path %>
+  <%= button_to "Edit", edit_event_path(@event) %> 
+  <%= button_to "Delete event", @event, method: :delete, form: { data: {confirm: 'Are you sure?' }}%>
+  <%= button_to "Back", events_path %>
 </div>

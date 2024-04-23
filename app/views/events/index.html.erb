@@ -1,23 +1,19 @@
 <h1>Events</h1>
 
 <div id="past_events">
+  <div class="cards-container">
   <h2>Past events:</h2>
   <% @events.past.each do |event| %>
     <%= render event %>
-    <p>
-      <%= link_to 'Details', event_path(event) %>
-    </p>
-    <hr>
   <% end %>
+  </div>
 </div>
 <br>
 <div id="future_events">
-  <h2>Future events:</h2>
-  <% @events.future.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to 'Details', event_path(event) %>
-    </p>
-    <hr>
-  <% end %>
+  <div class="cards-container">
+    <h2>Future events:</h2>
+    <% @events.future.each do |event| %>
+      <%= render event %>
+    <% end %>
+  </div>
 </div>
